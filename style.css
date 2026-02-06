@@ -1,0 +1,155 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0088cc; /* Biru Laut */
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Background Animasi Gelembung */
+.water-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#4db8ff, #0077be);
+    z-index: -1;
+}
+
+/* Kontainer Utama */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Kartu CV */
+.card {
+    background: #fffb00; /* Kuning Spongebob */
+    border: 5px solid #000;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 8px 8px 0px #d4af37;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Lubang Spons */
+.card::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    top: 10%; left: 5%;
+}
+
+/* Header Section */
+header h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3rem;
+    color: #e67e22;
+    text-shadow: 3px 3px 0px #fff;
+    text-align: center;
+}
+
+/* Grid Layout */
+.cv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Animasi Hover (Jiggle) */
+.hover-animate:hover {
+    transform: scale(1.05) rotate(2deg);
+    background-color: #ffef00;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Karakter Spongebob Kecil */
+.spongebob-character {
+    width: 100px;
+    height: 120px;
+    background: #fffb00;
+    border: 3px solid #000;
+    margin: 0 auto 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.eyes {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.eye {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mouth {
+    width: 40px;
+    height: 20px;
+    border-bottom: 3px solid #000;
+    margin: 10px auto;
+    border-radius: 50%;
+}
+
+/* Elemen List dan Text */
+h3 {
+    font-family: 'Luckiest Guy', cursive;
+    margin-bottom: 10px;
+    border-bottom: 2px dashed #000;
+    color: #2c3e50;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 3px;
+    font-weight: bold;
+    border: 2px solid #000;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+}
