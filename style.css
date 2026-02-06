@@ -1,155 +1,142 @@
-/* Reset & Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Dasar & Background */
 body {
-    background-color: #0088cc; /* Biru Laut */
+    margin: 0;
+    background: linear-gradient(to bottom, #4db8ff 0%, #0077be 100%);
     font-family: 'Quicksand', sans-serif;
     color: #333;
-    overflow-x: hidden;
+    min-height: 100vh;
 }
 
-/* Background Animasi Gelembung */
-.water-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#4db8ff, #0077be);
-    z-index: -1;
-}
-
-/* Kontainer Utama */
 .container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 40px auto;
     padding: 20px;
 }
 
-/* Kartu CV */
-.card {
-    background: #fffb00; /* Kuning Spongebob */
-    border: 5px solid #000;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 8px 8px 0px #d4af37;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
+/* Animasi Gelembung */
+.ocean {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     overflow: hidden;
 }
 
-/* Efek Lubang Spons */
-.card::before {
-    content: '';
+.bubble {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    top: 10%; left: 5%;
+    bottom: -50px;
+    animation: rise 10s infinite ease-in;
 }
 
-/* Header Section */
-header h1 {
+@keyframes rise {
+    0% { transform: translateY(0) scale(1); opacity: 0.5; }
+    100% { transform: translateY(-1000px) scale(1.5); opacity: 0; }
+}
+
+/* Header & Foto */
+.profile-card {
+    background: #fffb00;
+    border: 6px solid #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+.photo-frame {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #000;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    margin-right: 30px;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-tag {
     font-family: 'Luckiest Guy', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #e67e22;
-    text-shadow: 3px 3px 0px #fff;
-    text-align: center;
+    -webkit-text-stroke: 1px #000;
 }
 
-/* Grid Layout */
-.cv-grid {
+/* Card Section */
+.main-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-/* Animasi Hover (Jiggle) */
-.hover-animate:hover {
-    transform: scale(1.05) rotate(2deg);
-    background-color: #ffef00;
-    cursor: pointer;
-    z-index: 10;
-}
-
-/* Karakter Spongebob Kecil */
-.spongebob-character {
-    width: 100px;
-    height: 120px;
-    background: #fffb00;
-    border: 3px solid #000;
-    margin: 0 auto 20px;
+.card {
+    background: #fffb00; /* Kuning Spongebob */
+    border: 4px solid #000;
+    border-radius: 15px;
+    padding: 20px;
     position: relative;
-    border-radius: 10px;
+    box-shadow: 6px 6px 0px #d4af37;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.eyes {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 20px;
-}
-
-.eye {
-    width: 30px;
-    height: 30px;
-    background: white;
-    border: 2px solid #000;
-    border-radius: 50%;
-    position: relative;
-}
-
-.eye::after {
+/* Efek Lubang Spongebob pada Card */
+.card::after {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #000;
-    border-radius: 50%;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.mouth {
-    width: 40px;
+    width: 20px;
     height: 20px;
-    border-bottom: 3px solid #000;
-    margin: 10px auto;
+    background: rgba(0,0,0,0.05);
     border-radius: 50%;
+    top: 10px; right: 10px;
 }
 
-/* Elemen List dan Text */
+/* Animasi Saat Kursor Menyentuh Bagian CV */
+.card:hover {
+    transform: scale(1.05) rotate(2deg);
+    background: #ffff4d;
+    box-shadow: 12px 12px 0px #000;
+    cursor: pointer;
+}
+
 h3 {
     font-family: 'Luckiest Guy', cursive;
-    margin-bottom: 10px;
-    border-bottom: 2px dashed #000;
+    font-size: 1.4rem;
     color: #2c3e50;
+    border-bottom: 2px dashed #000;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 
-ul {
-    list-style: none;
-}
+ul { list-style: none; padding: 0; }
+li { margin-bottom: 8px; font-size: 0.95rem; }
 
-li {
-    margin-bottom: 8px;
-}
-
-.skill-tag {
+.tag {
     display: inline-block;
     background: #fff;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin: 3px;
-    font-weight: bold;
     border: 2px solid #000;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 3px;
 }
 
-/* Responsif */
-@media (max-width: 600px) {
-    header h1 { font-size: 2rem; }
+/* Responsif untuk HP */
+@media (max-width: 650px) {
+    .main-content { grid-template-columns: 1fr; }
+    .profile-card { flex-direction: column; text-align: center; }
+    .photo-frame { margin-right: 0; margin-bottom: 15px; }
 }

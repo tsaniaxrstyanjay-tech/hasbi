@@ -3,96 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Spongebob Squarepants</title>
+    <title>Curriculum Vitae - Spongebob Squarepants</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="water-background"></div>
+<div class="ocean">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</div>
 
-    <div class="container">
-        <div class="spongebob-character">
-            <div class="eyes">
-                <div class="eye"></div>
-                <div class="eye"></div>
-            </div>
-            <div class="mouth"></div>
+<div class="container">
+    <header class="profile-card">
+        <div class="photo-frame">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png" alt="Foto Spongebob">
         </div>
+        <div class="header-text">
+            <h1 class="name-tag">Spongebob Squarepants</h1>
+            <p class="tagline">Koki Utama di Krusty Krab</p>
+        </div>
+    </header>
 
-        <header class="card profile-header">
-            <h1 class="bounce-text">Spongebob Squarepants</h1>
-            <p>Karyawan Teladan di Krusty Krab</p>
-        </header>
+    <div class="main-content">
+        <section class="card section-tentang">
+            <h3>🍍 Tentang Diri</h3>
+            <p>Saya adalah spons laut yang sangat optimis, pekerja keras, dan pemegang rekor Karyawan Teladan terbanyak di Bikini Bottom. Saya percaya bahwa "I'm Ready!" adalah kunci kesuksesan.</p>
+        </section>
 
-        <main class="cv-grid">
-            <section class="card hover-animate">
-                <h3>🍍 Tentang Diri</h3>
-                <p>Saya adalah spons laut yang optimis, tinggal di dalam nanas di bawah laut. Memiliki dedikasi tinggi terhadap pekerjaan dan ahli dalam membalik patty!</p>
-            </section>
+        <section class="card section-bio">
+            <h3>📝 Biodata</h3>
+            <ul>
+                <li><strong>Tahun Lahir:</strong> 1986</li>
+                <li><strong>Nomor Telepon:</strong> 0812-3456-7890</li>
+                <li><strong>Alamat:</strong> Jalan Conchs No. 124, Rumah Nanas</li>
+                <li><strong>Sosial Media:</strong> @SpongeSquarePants</li>
+            </ul>
+        </section>
 
-            <section class="card hover-animate">
-                <h3>📝 Biodata</h3>
-                <ul>
-                    <li><strong>Tahun Lahir:</strong> 1986</li>
-                    <li><strong>Alamat:</strong> Jalan Conchs No. 124, Bikini Bottom</li>
-                    <li><strong>Telepon:</strong> (555) 0123-SPONGE</li>
-                    <li><strong>Sosial Media:</strong> @SpongeBobOfficial</li>
-                </ul>
-            </section>
+        <section class="card section-pendidikan">
+            <h3>🎓 Pendidikan</h3>
+            <div class="item">
+                <p><strong>Sekolah Mengemudi Mrs. Puff</strong> (Hingga Sekarang)</p>
+                <small>Status: Berjuang mendapatkan SIM</small>
+            </div>
+            <div class="item">
+                <p><strong>SD & SMP Bikini Bottom</strong> (Lulus 2001)</p>
+            </div>
+        </section>
 
-            <section class="card hover-animate">
-                <h3>🎓 Pendidikan</h3>
-                <div class="item">
-                    <p><strong>Sekolah Mengemudi Mrs. Puff</strong></p>
-                    <span>Lulus: Belum Pernah (Abadi)</span>
-                </div>
-                <div class="item">
-                    <p><strong>SD Bikini Bottom</strong></p>
-                    <span>Lulus: 1998</span>
-                </div>
-            </section>
+        <section class="card section-organisasi">
+            <h3>🤝 Pengalaman Organisasi</h3>
+            <ul>
+                <li><strong>SD (1995-1998):</strong> Anggota Klub Kolektor Ubur-ubur Junior</li>
+                <li><strong>SMP (1998-2001):</strong> Ketua Divisi Tiup Gelembung</li>
+                <li><strong>SMA (2001-2004):</strong> Kapten Tim Karate Sandy Cheeks</li>
+            </ul>
+        </section>
 
-            <section class="card hover-animate">
-                <h3>🤝 Pengalaman Organisasi</h3>
-                <ul>
-                    <li><strong>SD:</strong> Ketua Klub Gelembung Sabun (1996-1998)</li>
-                    <li><strong>SMP:</strong> Anggota Paduan Suara Ubur-Ubur (1998-2001)</li>
-                    <li><strong>SMA:</strong> Kapten Tim Cheerleader Bikini Bottom (2001-2004)</li>
-                </ul>
-            </section>
+        <section class="card section-keahlian">
+            <h3>⚡ Keahlian & Bahasa</h3>
+            <div class="tags">
+                <span class="tag">Masak Krabby Patty</span>
+                <span class="tag">Karate</span>
+                <span class="tag">Menangkap Ubur-ubur</span>
+            </div>
+            <p style="margin-top: 10px;"><strong>Bahasa:</strong> Indonesia, Inggris, Lumba-lumba, Gelembung.</p>
+        </section>
 
-            <section class="card hover-animate">
-                <h3>🍳 Keahlian</h3>
-                <div class="skill-tag">Memasak Krabby Patty</div>
-                <div class="skill-tag">Tertawa Menular</div>
-                <div class="skill-tag">Tiup Gelembung</div>
-                <div class="skill-tag">Karate</div>
-            </section>
-
-            <section class="card hover-animate">
-                <h3>Clarinet & Fun</h3>
-                <ul>
-                    <li>Menangkap Ubur-ubur</li>
-                    <li>Karate dengan Sandy</li>
-                    <li>Mengganggu Squidward</li>
-                </ul>
-            </section>
-
-            <section class="card hover-animate">
-                <h3>📜 Sertifikat</h3>
-                <ul>
-                    <li>Karyawan Teladan Bulan Ini (374 kali berturut-turut)</li>
-                    <li>Sertifikat Menggelembung Profesional</li>
-                </ul>
-            </section>
-
-            <section class="card hover-animate">
-                <h3>🗣️ Bahasa</h3>
-                <p>Bahasa Inggris, Bahasa Lumba-lumba (Sensor), Bahasa Gelembung.</p>
-            </section>
-        </main>
+        <section class="card section-hobby">
+            <h3>🏆 Hobby & Sertifikat</h3>
+            <p><strong>Hobby:</strong> Bekerja, Tertawa, Mengganggu Squidward.</p>
+            <p><strong>Sertifikat:</strong> Karyawan Teladan (Januari - Desember), Ahli Gelembung Lisensi A.</p>
+        </section>
     </div>
+</div>
 
 </body>
 </html>
